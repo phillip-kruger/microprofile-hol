@@ -18,6 +18,7 @@ public interface CapitalizeService {
     @GET
     @Path("{word}")
     @Fallback(fallbackMethod = "asIs")
+    //@Fallback(CapitalizeFallback.class)
     String capitalize(@PathParam("word") String word);
 
     default String asIs(String word) {
